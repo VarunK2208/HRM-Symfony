@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body %}
+    <div style="text-align: center; margin-top: 80px;">
+        <h1>Welcome to the Admin Dashboard</h1>
+        <p>Hello {{ app.user.name }} ({{ app.user.email }})</p>
+    </div>
+{% endblock %}
