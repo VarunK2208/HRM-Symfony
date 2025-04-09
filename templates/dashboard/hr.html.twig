@@ -6,7 +6,7 @@
 {% block body %}
     <h1>Welcome to the HR Dashboard</h1>
 
-    <p>Hello {{ app.user.name }} ({{ app.user.email }})</p>
+    <p>Hello {{ app.user.name }} </p>
 
     <ul>
         <li><a href="#">➕ Add Employee</a></li>
@@ -14,4 +14,10 @@
         <li><a href="#">📅 View Attendance</a></li>
         
     </ul>
+
+<form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: inline;">
+    <button type="submit">🚪 Logout</button>
+</form>
+
+
 {% endblock %}

@@ -7,4 +7,9 @@
         <h1>Welcome to the Admin Dashboard</h1>
         <p>Hello {{ app.user.name }} ({{ app.user.email }})</p>
     </div>
+
+<form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: inline;">
+    <button type="submit">🚪 Logout</button>
+</form>
+
 {% endblock %}

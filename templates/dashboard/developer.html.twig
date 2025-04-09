@@ -3,12 +3,18 @@
 {% block title %}Employee Dashboard{% endblock %}
 
 {% block body %}
-    <h1>👤 Employee Dashboard</h1>
+    <h1>👤 Developer Dashboard</h1>
+    <p>Hello {{ app.user.name }} </p>
 
     <ul>
         <li><a href="#">📅 View My Attendance</a></li>
         <li><a href="#">✏️ Edit Profile</a></li>
-        <li><a href="#">📄 My Payslips</a></li>
-       
+        <li><a href="#">📄 My Payslips</a></li>      
     </ul>
+
+<form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: inline;">
+    <button type="submit">🚪 Logout</button>
+</form>
+
+
 {% endblock %}

@@ -25,7 +25,7 @@ security:
                 success_handler: App\Security\RoleBasedRedirectHandler
                 enable_csrf: true
             logout:
-                path: app_logout
+                path: /logout
                 target: app_login
 
     access_control:
