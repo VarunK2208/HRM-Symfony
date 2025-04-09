@@ -1,0 +1,17 @@
+{# templates/dashboard/hr.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}HR Dashboard{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the HR Dashboard</h1>
+
+    <p>Hello {{ app.user.name }} ({{ app.user.email }})</p>
+
+    <ul>
+        <li><a href="#">➕ Add Employee</a></li>
+        <li><a href="#">👥 View Employees</a></li>
+        <li><a href="#">📅 View Attendance</a></li>
+        
+    </ul>
+{% endblock %}

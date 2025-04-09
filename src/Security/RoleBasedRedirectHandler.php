@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerI
 
 class RoleBasedRedirectHandler implements AuthenticationSuccessHandlerInterface
 {
-    private $router;
+    private RouterInterface $router;
 
     public function __construct(RouterInterface $router)
     {
@@ -25,7 +25,14 @@ class RoleBasedRedirectHandler implements AuthenticationSuccessHandlerInterface
             return new RedirectResponse($this->router->generate('admin_dashboard'));
         }
 
-        // Add more roles later (HR, Developer)
+        if (in_array('ROLE_HR', $roles)) {
+            return new RedirectResponse($this->router->generate('hr_dashboard'));
+        }
+
+        if (in_array('ROLE_DEVELOPER', $roles)) {
+            return new RedirectResponse($this->router->generate('developer_dashboard'));
+        }
+
         return new RedirectResponse($this->router->generate('home'));
     }
 }
