@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Payslips{% endblock %}
+
+{% block body %}
+<h2>My Payslips</h2>
+
+<table border="1">
+    <tr>
+        <th>Month</th>
+        <th>Amount</th>
+    </tr>
+    {% for payslip in payslips %}
+        <tr>
+            <td>{{ payslip.month }}</td>
+            <td>{{ payslip.amount }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

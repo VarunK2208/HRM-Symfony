@@ -3,3 +3,15 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+employee_profile_edit:
+    path: /employee/profile/edit
+    controller: App\Controller\EmployeeController::editProfile
+
+employee_attendance:
+    path: /employee/attendance
+    controller: App\Controller\EmployeeController::viewAttendance
+
+employee_payslips:
+    path: /employee/payslips
+    controller: App\Controller\EmployeeController::viewPayslips

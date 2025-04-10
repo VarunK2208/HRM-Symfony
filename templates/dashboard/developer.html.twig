@@ -7,9 +7,9 @@
     <p>Hello {{ app.user.name }} </p>
 
     <ul>
-        <li><a href="#">📅 View My Attendance</a></li>
-        <li><a href="#">✏️ Edit Profile</a></li>
-        <li><a href="#">📄 My Payslips</a></li>      
+       <li><a href="{{ path('employee_profile_edit') }}">✏️ Edit Profile</a></li>
+    <li><a href="{{ path('employee_attendance') }}">📅 Check Attendance</a></li>
+    <li><a href="{{ path('employee_payslips') }}">📄 View My Payslips</a></li>
     </ul>
 
 <form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: inline;">

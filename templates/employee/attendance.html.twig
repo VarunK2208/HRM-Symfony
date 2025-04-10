@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Attendance{% endblock %}
+
+{% block body %}
+<h2>My Attendance</h2>
+
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+    {% for record in attendance %}
+        <tr>
+            <td>{{ record.date|date('Y-m-d') }}</td>
+            <td>{{ record.status }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
