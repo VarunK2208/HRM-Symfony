@@ -3,12 +3,17 @@
 {% block body %}
 <h1>Employee Attendance</h1>
 
-<ul>
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
     {% for record in records %}
-        <li>{{ record.date|date('Y-m-d') }} - {{ record.status }}</li>
-    {% else %}
-        <li>No attendance records found.</li>
+        <tr>
+            <td>{{ record.date|date('Y-m-d') }}</td>
+            <td>{{ record.status }}</td>
+        </tr>
     {% endfor %}
-</ul>
-<a href="{{ path('hr_view_employees') }}">🔙 Back to Employees</a>
+
+<a href="{{ path('hr_dashboard') }}">🔙 Back</a>
 {% endblock %}

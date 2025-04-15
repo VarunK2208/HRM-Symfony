@@ -10,10 +10,12 @@
     <label>Email:</label><br>
     <input type="email" name="email" required><br>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
-
+   <select name="role" required>
+        <option value="ADMIN">Admin</option>
+        <option value="HR">HR</option>
+        <option value="DEVELOPER">Developer</option>
+    </select>
     <button type="submit">✅ Add</button>
 </form>
-<a href="{{ path('hr_view_employees') }}">🔙 Back</a>
+<a href="{{ path('hr_dashboard') }}">🔙 Back</a>
 {% endblock %}

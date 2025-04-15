@@ -3,12 +3,17 @@
 {% block body %}
 <h1>Employee Payslips</h1>
 
-<ul>
+<table border="1">
+    <tr>
+        <th>Month</th>
+        <th>Amount</th>
+    </tr>
     {% for slip in payslips %}
-        <li>{{ slip.month }} - {{ slip.amount }}</li>
-    {% else %}
-        <li>No payslips found.</li>
+        <tr>
+            <td>{{ slip.month }}</td>
+            <td>{{ slip.amount }}</td>
+        </tr>
     {% endfor %}
-</ul>
-<a href="{{ path('hr_view_employees') }}">🔙 Back to Employees</a>
+</table>
+<a href="{{ path('hr_dashboard') }}">🔙 Back</a>
 {% endblock %}

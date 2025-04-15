@@ -19,7 +19,7 @@ class HRController extends AbstractController
     #[Route('/hr/employees', name: 'hr_view_employees')]
     public function viewEmployees(DocumentManager $dm): Response
     {
-        $employees = $dm->getRepository(User::class)->findBy(['roles' => 'ROLE_EMPLOYEE']);
+        $employees = $dm->getRepository(User::class)->findBy(['role' => 'DEVELOPER']);
         return $this->render('hr/view_employees.html.twig', [
             'employees' => $employees,
         ]);
@@ -34,7 +34,7 @@ class HRController extends AbstractController
             $user->setName($data->get('name'));
             $user->setEmail($data->get('email'));
             $user->setPassword(password_hash($data->get('password'), PASSWORD_BCRYPT));
-            $user->setRoles(['ROLE_EMPLOYEE']);
+            $user->setRole('DEVELOPER');
 
             $dm->persist($user);
             $dm->flush();
