@@ -1,29 +1,25 @@
 <?php
-
 namespace App\Document;
 
-use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+use App\Document\User;
 
-#[MongoDB\Document]
+#[ODM\Document]
 class Attendance
 {
-    #[MongoDB\Id]
+    #[ODM\Id]
     private $id;
 
-    #[MongoDB\ReferenceOne(targetDocument: User::class)]
+    #[ODM\ReferenceOne(targetDocument: User::class, storeAs: "dbRef")]
     private $user;
 
-    #[MongoDB\Field(type: 'date')]
+    #[ODM\Field(type: "date")]
     private $date;
 
-    #[MongoDB\Field(type: 'string')]
+    #[ODM\Field(type: "string")]
     private $status;
 
-    public function getId(): ?string
-    {
-        return $this->id;
-    }
-
+    // Getters and setters...
     public function getUser(): ?User
     {
         return $this->user;

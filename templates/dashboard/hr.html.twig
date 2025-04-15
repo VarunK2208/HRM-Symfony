@@ -7,13 +7,13 @@
     <h1>Welcome to the HR Dashboard</h1>
 
     <p>Hello {{ app.user.name }} </p>
+<ul>
+    <li><a href="{{ path('hr_view_employees') }}">View All Employees</a></li>
+    <li><a href="{{ path('hr_add_employee') }}">Add New Employee</a></li>
+    <li><a href="{{ path('hr_view_attendance') }}">View Attendance Records</a></li>
+    <li><a href="{{ path('hr_view_payslips') }}">View Employee Payslips</a></li>
+</ul>
 
-    <ul>
-        <li><a href="#">➕ Add Employee</a></li>
-        <li><a href="#">👥 View Employees</a></li>
-        <li><a href="#">📅 View Attendance</a></li>
-        
-    </ul>
 
 <form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: inline;">
     <button type="submit">🚪 Logout</button>

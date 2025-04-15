@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Attendance Records{% endblock %}
+{% block body %}
+<h1>Employee Attendance</h1>
+
+<ul>
+    {% for record in records %}
+        <li>{{ record.date|date('Y-m-d') }} - {{ record.status }}</li>
+    {% else %}
+        <li>No attendance records found.</li>
+    {% endfor %}
+</ul>
+<a href="{{ path('hr_view_employees') }}">🔙 Back to Employees</a>
+{% endblock %}

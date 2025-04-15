@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Payslip Records{% endblock %}
+{% block body %}
+<h1>Employee Payslips</h1>
+
+<ul>
+    {% for slip in payslips %}
+        <li>{{ slip.month }} - {{ slip.amount }}</li>
+    {% else %}
+        <li>No payslips found.</li>
+    {% endfor %}
+</ul>
+<a href="{{ path('hr_view_employees') }}">🔙 Back to Employees</a>
+{% endblock %}

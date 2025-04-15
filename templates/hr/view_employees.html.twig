@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}All Employees{% endblock %}
+{% block body %}
+<h1>All Employees</h1>
+
+<a href="{{ path('hr_add_employee') }}">➕ Add New Employee</a>
+<ul>
+    {% for emp in employees %}
+        <li>
+            <strong>{{ emp.name }}</strong> - {{ emp.email }}
+            | <a href="{{ path('hr_edit_employee', { id: emp.id }) }}">✏️ Edit</a>
+            | <a href="{{ path('hr_delete_employee', { id: emp.id }) }}" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
+            | <a href="{{ path('hr_employee_attendance', { id: emp.id }) }}">📅 Attendance</a>
+            | <a href="{{ path('hr_employee_payslips', { id: emp.id }) }}">💰 Payslips</a>
+        </li>
+    {% else %}
+        <li>No employees found.</li>
+    {% endfor %}
+</ul>
+<a href="{{ path('hr_view_attendance') }}">🔙 Back to HR Dashboard</a>
+{% endblock %}

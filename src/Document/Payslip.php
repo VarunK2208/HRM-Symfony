@@ -10,7 +10,7 @@ class Payslip
     #[MongoDB\Id]
     private $id;
 
-    #[MongoDB\ReferenceOne(targetDocument: User::class)]
+    #[ODM\ReferenceOne(targetDocument: User::class, storeAs: "dbRef")]
     private $user; // FIXED: use `$user`, not `$user_id`
 
     #[MongoDB\Field(type: 'string')]
